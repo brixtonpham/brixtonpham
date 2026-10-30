@@ -1,32 +1,22 @@
-<div align="center">
+### hi, I'm brixton 👋
 
-<img src="https://github.com/brixtonpham.png" width="112" alt="" />
+I'm an indie builder. I make small software products and run them end to end: the code, the payments, the
+emails, the marketing, the late-night bug fix. These days AI does most of the typing; the deciding is still on me.
 
-### brixton pham
+**what I care about**
 
-`agents` · `orchestration` · `systems that run while I sleep`
+- shipping something real over planning something perfect
+- small, boring stacks that are cheap to run
+- automating a task the second time I do it by hand
+- talking to users before writing more code
 
-</div>
+**right now**
 
-```console
-$ whoami
-an engineer who writes less code every month and ships more of it.
+- building a few products of my own (private for now)
+- open-sourcing small tools along the way, like [`muse2api-cli`](https://github.com/brixtonpham/muse2api-cli)
 
-$ cat ~/.principles
-  build the machine that builds the thing.
-  every task you repeat is an agent you haven't written yet.
-  judge a system by what it costs after it ships.
-  crash loudly. never corrupt quietly.
-  read the source. then read it again.
+**tools I reach for**
 
-$ ps -o comm,count,role
-  claude-code   ~20   parallel sessions, sub-agents, git worktrees
-  launchd        12   unattended pipelines, around the clock
-  mcp             *   custom servers for browsers, data and markets
-```
+Python · TypeScript · Next.js · Cloudflare Workers, D1, R2 · Claude Code
 
-**now** — [`muse2api-cli`](https://github.com/brixtonpham/muse2api-cli): an unofficial command line for generating Muse videos and images.
-
-**stack** — Python · TypeScript · Cloudflare Workers, D1, R2 · Next.js · Hono · Claude Code · MCP
-
-<sub>most of what I build is private. the interesting parts are already running.</sub>
+<sub>say hi in an issue on any of my repos.</sub>
