@@ -22,4 +22,16 @@
 
 - 🎬 [muse2api-cli](https://github.com/brixtonpham/muse2api-cli): generate Muse videos and images from the command line
 
+## Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
+  <img alt="3D contribution graph" src="./profile-3d-contrib/profile-green-animate.svg" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brixtonpham/brixtonpham/output/snake-dark.svg" />
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/brixtonpham/brixtonpham/output/snake.svg" />
+</picture>
+
 Ship first, polish later.
