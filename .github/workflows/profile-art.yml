@@ -1,8 +1,8 @@
 name: Profile art
 
-# Redraws the contribution snake and the 3D contribution graph once a day.
-# Both read the public contribution calendar, which includes private-repo
-# counts (profile setting "Private contributions") but never private repo names.
+# Redraws the contribution snake, 3D contribution graph, and recent OSS activity once a day.
+# Contribution graphs read the public contribution calendar (which includes private-repo
+# counts via profile settings, never private repo names). Recent OSS work reads public PRs only.
 
 on:
   schedule:
@@ -10,7 +10,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/profile-art.yml"]
+    paths:
+      - ".github/workflows/profile-art.yml"
+      - "scripts/update_oss_activity.py"
 
 permissions:
   contents: write
@@ -37,6 +39,35 @@ jobs:
           if git commit -m "Update 3D contribution graph"; then
             git pull --rebase
             git push
+          fi
+
+  oss-work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Update recent open-source work
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/update_oss_activity.py --readme README.md --user "${{ github.repository_owner }}"
+      - name: Commit README if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- README.md; then
+            git add README.md
+            git commit -m "Update recent open-source work"
+            for attempt in 1 2 3; do
+              if git pull --rebase --quiet && git push --quiet; then
+                break
+              fi
+              [ "$attempt" -eq 3 ] && exit 1
+              sleep $((attempt * 2))
+            done
           fi
 
   snake:

@@ -28,6 +28,44 @@ muse2api login --account main --browser
 muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 ```
 
+### 🔧 Recent open-source work
+
+<!-- OSS-WORK:START -->
+- 🟢 open — **[simplexai-labs/linger#400](https://github.com/simplexai-labs/linger/pull/400)** fix(web): disambiguate duplicate runtime model display labels
+- 🟢 open — **[ag-ui-protocol/ag-ui#3431](https://github.com/ag-ui-protocol/ag-ui/pull/3431)** fix(langgraph): stream content carried on finish_reason chunks
+- 🟢 open — **[nexu-io/openmotion#765](https://github.com/nexu-io/openmotion/pull/765)** fix(dsh): recover when --dump-config rejects Electron-managed desktop profile
+
+<sub>Updated automatically daily from public GitHub activity.</sub>
+<!-- OSS-WORK:END -->
+
+## 🏮 Play Ô ăn quan (Vietnamese Mandarin Square Capturing)
+
+<!-- OANQUAN:START -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-dark.svg?v=g1-t0" />
+  <img alt="Ô ăn quan board — Game 1, Turn 0 (South to move)" src="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-light.svg?v=g1-t0" />
+</picture>
+
+**South's turn (bottom row)** — click a pit & direction, then press **Create** on the prefilled issue:
+
+| S1 (5) | S2 (5) | S3 (5) | S4 (5) | S5 (5) |
+| :---: | :---: | :---: | :---: | :---: |
+| [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS1%7CL&body=Click%20Create%20to%20sow%20S1%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS1%7CR&body=Click%20Create%20to%20sow%20S1%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS2%7CL&body=Click%20Create%20to%20sow%20S2%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS2%7CR&body=Click%20Create%20to%20sow%20S2%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS3%7CL&body=Click%20Create%20to%20sow%20S3%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS3%7CR&body=Click%20Create%20to%20sow%20S3%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS4%7CL&body=Click%20Create%20to%20sow%20S4%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS4%7CR&body=Click%20Create%20to%20sow%20S4%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS5%7CL&body=Click%20Create%20to%20sow%20S5%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS5%7CR&body=Click%20Create%20to%20sow%20S5%20right.%20No%20edit%20needed.) |
+
+</div>
+
+<details>
+<summary>How to play (3 lines) · Recent moves · Top players</summary>
+
+1. Pick one of the active side's 5 pits (`←` left or `→` right) to drop 1 stone per pit around the ring.
+2. Land before a non-empty *dân* pit to keep sowing; land before an empty pit followed by a full pit to **capture** it (chain captures allowed; non-empty **Quan** stops sowing).
+3. Game ends when both big **Quan** bowls (10 pts each) are empty. Remaining *dân* go to their owner's side; highest score wins.
+
+</details>
+<!-- OANQUAN:END -->
+
 ## 🛠 Stack
 
 ![Claude Code](https://img.shields.io/badge/-Claude_Code-D97757?style=flat-square&logo=anthropic&logoColor=white)

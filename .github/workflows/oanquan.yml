@@ -1,0 +1,110 @@
+name: O an quan
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  move:
+    if: startsWith(github.event.issue.title, 'oanquan|')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      issues: write
+    concurrency:
+      group: oanquan-readme-write
+      queue: max
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Process move and publish
+        id: turn
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_USER_TYPE: ${{ github.event.issue.user.type }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          STATE_DIR="$RUNNER_TEMP/oanquan-state"
+          mkdir -p "$STATE_DIR"
+
+          for attempt in 1 2 3 4 5; do
+            git fetch --quiet --depth=1 origin main
+            git reset --quiet --hard origin/main
+
+            if git fetch --quiet --depth=1 origin game-state 2>/dev/null; then
+              git show origin/game-state:state.json > "$STATE_DIR/state.json"
+            else
+              rm -f "$STATE_DIR/state.json"
+            fi
+
+            python3 -m oanquan.cli \
+              --state-dir "$STATE_DIR" \
+              --readme README.md \
+              --result-json "$STATE_DIR/result.json"
+
+            CHANGED="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["changed"])' "$STATE_DIR/result.json")"
+            if [ "$CHANGED" != "True" ]; then
+              break
+            fi
+
+            # Force-push single-commit orphan game-state branch (zero SVG/JSON history bloat)
+            WORK="$RUNNER_TEMP/game-state-repo"
+            rm -rf "$WORK" && mkdir -p "$WORK"
+            cp "$STATE_DIR/state.json" "$STATE_DIR/board-light.svg" "$STATE_DIR/board-dark.svg" "$WORK/"
+            git -C "$WORK" init -q -b game-state
+            git -C "$WORK" config user.name "github-actions[bot]"
+            git -C "$WORK" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C "$WORK" add state.json board-light.svg board-dark.svg
+            git -C "$WORK" commit -q -m "oanquan: update board state"
+            git -C "$WORK" remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+            git -C "$WORK" push -q --force origin game-state
+
+            # Commit tiny README.md diff on main
+            git add README.md
+            git commit -q -m "oanquan: ${ISSUE_TITLE} by @${ISSUE_USER}"
+            if git push --quiet origin main; then
+              break
+            fi
+            [ "$attempt" -eq 5 ] && { echo "Push race failed after 5 tries" >&2; exit 1; }
+            sleep $((attempt * 2))
+          done
+
+          RESULT_JSON="$STATE_DIR/result.json" python3 -c '
+          import json, os, secrets
+          res = json.load(open(os.environ["RESULT_JSON"]))
+          delim = "MSG_" + secrets.token_hex(12)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"reason={res[\"close_reason\"]}\n")
+              f.write(f"comment<<{delim}\n{res[\"comment\"]}\n{delim}\n")
+          '
+
+      - name: Comment and close issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT: ${{ steps.turn.outputs.comment }}
+          REASON: ${{ steps.turn.outputs.reason }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --body "$COMMENT"
+          gh issue close "${{ github.event.issue.number }}" --reason "$REASON"
+
+      - name: Report unexpected workflow failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" \
+            --body "Something went wrong processing this move. Please check https://github.com/brixtonpham before retrying."
