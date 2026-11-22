@@ -86,10 +86,12 @@ jobs:
           RESULT_JSON="$STATE_DIR/result.json" python3 -c '
           import json, os, secrets
           res = json.load(open(os.environ["RESULT_JSON"]))
+          reason = res["close_reason"]
+          comment = res["comment"]
           delim = "MSG_" + secrets.token_hex(12)
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              f.write(f"reason={res[\"close_reason\"]}\n")
-              f.write(f"comment<<{delim}\n{res[\"comment\"]}\n{delim}\n")
+              f.write(f"reason={reason}\n")
+              f.write(f"comment<<{delim}\n{comment}\n{delim}\n")
           '
 
       - name: Comment and close issue
