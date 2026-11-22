@@ -44,15 +44,15 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-dark.svg?v=g1-t0" />
-  <img alt="Ô ăn quan board — Game 1, Turn 0 (South to move)" src="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-light.svg?v=g1-t0" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-dark.svg?v=g1-t1" />
+  <img alt="Ô ăn quan board — Game 1, Turn 1 (North to move)" src="https://raw.githubusercontent.com/brixtonpham/brixtonpham/game-state/board-light.svg?v=g1-t1" />
 </picture>
 
-**South's turn (bottom row)** — click a pit & direction, then press **Create** on the prefilled issue:
+**North's turn (top row)** — click a pit & direction, then press **Create** on the prefilled issue:
 
-| S1 (5) | S2 (5) | S3 (5) | S4 (5) | S5 (5) |
+| N1 (6) | N2 (6) | N3 (0) | N4 (6) | N5 (6) |
 | :---: | :---: | :---: | :---: | :---: |
-| [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS1%7CL&body=Click%20Create%20to%20sow%20S1%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS1%7CR&body=Click%20Create%20to%20sow%20S1%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS2%7CL&body=Click%20Create%20to%20sow%20S2%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS2%7CR&body=Click%20Create%20to%20sow%20S2%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS3%7CL&body=Click%20Create%20to%20sow%20S3%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS3%7CR&body=Click%20Create%20to%20sow%20S3%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS4%7CL&body=Click%20Create%20to%20sow%20S4%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS4%7CR&body=Click%20Create%20to%20sow%20S4%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS5%7CL&body=Click%20Create%20to%20sow%20S5%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct0%7CS5%7CR&body=Click%20Create%20to%20sow%20S5%20right.%20No%20edit%20needed.) |
+| [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN1%7CL&body=Click%20Create%20to%20sow%20N1%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN1%7CR&body=Click%20Create%20to%20sow%20N1%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN2%7CL&body=Click%20Create%20to%20sow%20N2%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN2%7CR&body=Click%20Create%20to%20sow%20N2%20right.%20No%20edit%20needed.) | *empty* | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN4%7CL&body=Click%20Create%20to%20sow%20N4%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN4%7CR&body=Click%20Create%20to%20sow%20N4%20right.%20No%20edit%20needed.) | [←](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN5%7CL&body=Click%20Create%20to%20sow%20N5%20left.%20No%20edit%20needed.) · [→](https://github.com/brixtonpham/brixtonpham/issues/new?title=oanquan%7Cg1%7Ct1%7CN5%7CR&body=Click%20Create%20to%20sow%20N5%20right.%20No%20edit%20needed.) |
 
 </div>
 
@@ -62,6 +62,18 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 1. Pick one of the active side's 5 pits (`←` left or `→` right) to drop 1 stone per pit around the ring.
 2. Land before a non-empty *dân* pit to keep sowing; land before an empty pit followed by a full pit to **capture** it (chain captures allowed; non-empty **Quan** stops sowing).
 3. Game ends when both big **Quan** bowls (10 pts each) are empty. Remaining *dân* go to their owner's side; highest score wins.
+
+**Last 5 moves**
+
+| Turn | Player | Side | Move | Captured |
+| ---: | :--- | :--- | :---: | ---: |
+| 1 | [@brixtonpham](https://github.com/brixtonpham) | South | `S3 →` | +6 |
+
+**Top players**
+
+| Player | Moves | Captured | Wins |
+| :--- | ---: | ---: | ---: |
+| [@brixtonpham](https://github.com/brixtonpham) | 1 | 6 | 0 |
 
 </details>
 <!-- OANQUAN:END -->
