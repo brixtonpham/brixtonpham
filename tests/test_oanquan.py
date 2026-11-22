@@ -190,13 +190,13 @@ class TestCliAntiSpam(unittest.TestCase):
         # Stale turn rejected with 0 changes
         st_stale, res_stale = process_issue(st1, title="oanquan|g1|t0|S2|R", user="bob", user_type="User", now=self.t0 + timedelta(seconds=10))
         self.assertFalse(res_stale["changed"])
-        self.assertEqual(res_stale["close_reason"], "not_planned")
+        self.assertEqual(res_stale["close_reason"], "not planned")
         self.assertEqual(st_stale["turn"], 1)
 
         # Consecutive move by alice blocked within 24h
         _, res_consec = process_issue(st1, title="oanquan|g1|t1|N1|L", user="alice", user_type="User", now=self.t0 + timedelta(minutes=5))
         self.assertFalse(res_consec["changed"])
-        self.assertEqual(res_consec["close_reason"], "not_planned")
+        self.assertEqual(res_consec["close_reason"], "not planned")
 
         # Consecutive move by alice allowed after 24h idle
         st2, res_idle = process_issue(st1, title="oanquan|g1|t1|N1|L", user="alice", user_type="User", now=self.t0 + timedelta(hours=24, minutes=1))

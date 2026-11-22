@@ -53,7 +53,7 @@ def process_issue(
 
     Returns (updated_state, result_dict) where result_dict has:
       - changed: bool
-      - close_reason: "completed" | "not_planned"
+      - close_reason: "completed" | "not planned"
       - comment: str
     """
     now_iso = _format_iso(now)
@@ -62,7 +62,7 @@ def process_issue(
     if user_type != "User":
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": f"Moves must be submitted by human GitHub accounts. Back to board: {profile_url}",
         }
 
@@ -76,13 +76,13 @@ def process_issue(
         if req_gid != cur_gid:
             return state, {
                 "changed": False,
-                "close_reason": "not_planned",
+                "close_reason": "not planned",
                 "comment": f"Stale new-game request (currently on Game #{cur_gid}). Check the live board: {profile_url}",
             }
         if not state["game_over"] and user != OWNER_LOGIN:
             return state, {
                 "changed": False,
-                "close_reason": "not_planned",
+                "close_reason": "not planned",
                 "comment": f"Game #{cur_gid} is still in progress! Make a move on the live board: {profile_url}",
             }
         rl = state.get("rate_limit", {})
@@ -106,7 +106,7 @@ def process_issue(
     if not m_move:
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": f"Unrecognized move format. Please click a legal move link directly on the board: {profile_url}",
         }
 
@@ -120,14 +120,14 @@ def process_issue(
     if state["game_over"]:
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": f"Game #{state['game_id']} has already finished! Start a new game from {profile_url}",
         }
 
     if req_gid != int(state["game_id"]) or req_turn != int(state["turn"]):
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": (
                 f"Someone already played before this move (board is now Game #{state['game_id']}, "
                 f"Turn {state['turn']}). Pick a fresh move at {profile_url}"
@@ -142,7 +142,7 @@ def process_issue(
         if idle_hours < CONSECUTIVE_EXEMPT_HOURS:
             return state, {
                 "changed": False,
-                "close_reason": "not_planned",
+                "close_reason": "not planned",
                 "comment": (
                     f"Thanks @{user}! To keep it a community game, please let someone else take the next turn "
                     f"(or come back if the board stays quiet for 24h). Live board: {profile_url}"
@@ -154,7 +154,7 @@ def process_issue(
     if len(recent_user_moves) >= MAX_MOVES_PER_HOUR:
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": (
                 f"Rate limit reached ({MAX_MOVES_PER_HOUR} moves/hour per player). "
                 f"Try again a bit later! Live board: {profile_url}"
@@ -166,7 +166,7 @@ def process_issue(
     except ValueError as exc:
         return state, {
             "changed": False,
-            "close_reason": "not_planned",
+            "close_reason": "not planned",
             "comment": f"Illegal move ({exc}). Pick a highlighted move at {profile_url}",
         }
 
