@@ -1,0 +1,100 @@
+{
+  "game_id": 1,
+  "turn": 1,
+  "active_side": "north",
+  "game_over": false,
+  "winner": null,
+  "pits": [
+    {
+      "quan": true,
+      "dan": 1
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": false,
+      "dan": 0
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": true,
+      "dan": 1
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": false,
+      "dan": 0
+    },
+    {
+      "quan": false,
+      "dan": 0
+    },
+    {
+      "quan": false,
+      "dan": 6
+    },
+    {
+      "quan": false,
+      "dan": 6
+    }
+  ],
+  "scores": {
+    "north": 0,
+    "south": 6,
+    "debt_north": 0,
+    "debt_south": 0
+  },
+  "last_move": {
+    "turn": 1,
+    "user": "brixtonpham",
+    "side": "south",
+    "pit": "S3",
+    "dir": "R",
+    "move": "S3 →",
+    "captured": 6,
+    "captured_quan": 0,
+    "refilled": null,
+    "at": "2026-11-22T05:47:30Z"
+  },
+  "recent_moves": [
+    {
+      "turn": 1,
+      "user": "brixtonpham",
+      "side": "south",
+      "move": "S3 →",
+      "captured": 6
+    }
+  ],
+  "leaderboard": {
+    "brixtonpham": {
+      "moves": 1,
+      "captured": 6,
+      "wins": 0
+    }
+  },
+  "rate_limit": {
+    "last_mover": "brixtonpham",
+    "last_move_at": "2026-11-22T05:47:30Z",
+    "user_hourly": {
+      "brixtonpham": [
+        "2026-11-22T05:47:30Z"
+      ]
+    }
+  }
+}
