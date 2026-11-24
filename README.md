@@ -32,7 +32,6 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 
 <!-- OSS-WORK:START -->
 - 🟢 open — **[skyhook-io/radar#2846](https://github.com/skyhook-io/radar/pull/2846)** feat(relations): add CSI VolumeSnapshot resource relationships
-- 🟢 open — **[simplexai-labs/linger#400](https://github.com/simplexai-labs/linger/pull/400)** fix(web): disambiguate duplicate runtime model display labels
 - 🟢 open — **[ag-ui-protocol/ag-ui#3431](https://github.com/ag-ui-protocol/ag-ui/pull/3431)** fix(langgraph): stream content carried on finish_reason chunks
 - 🟢 open — **[nexu-io/openmotion#765](https://github.com/nexu-io/openmotion/pull/765)** fix(dsh): recover when --dump-config rejects Electron-managed desktop profile
 
