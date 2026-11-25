@@ -4,7 +4,7 @@
 
 **Brixton Pham** · Vietnam
 
-> **Vibe coding gets you to launch. Automated maintenance keeps it alive.**
+*Vibe coding gets you to launch. Automated maintenance keeps it alive.*
 
 I build small software products end to end, wire up day-2 agents to monitor and patch them, and contribute fixes upstream to open-source agent tools.
 
