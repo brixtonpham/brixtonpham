@@ -1,17 +1,19 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=640&lines=Indie+builder+%C2%B7+AI-native+engineer;Products%2C+agent+tooling%2C+and+open+source;Systems+that+run+on+their+own" alt="Indie builder · AI-native engineer" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=640&lines=Indie+builder+%C2%B7+AI-native+engineer;Products%2C+agent+tooling%2C+and+open+source;Day-2+systems+that+run+themselves" alt="Indie builder · AI-native engineer" />
 
 **Brixton Pham** · Vietnam
 
-I build small software products end to end, contribute to open-source agent tools, and automate the boring parts.
+> **Vibe coding gets you to launch. Automated maintenance keeps it alive.**
+
+I build small software products end to end, wire up day-2 agents to monitor and patch them, and contribute fixes upstream to open-source agent tools.
 
 </div>
 
 ## 🔭 What I do
 
 - 🛠️ **End-to-end products**: taking ideas from first prototype to live production — small stacks, real users, low ops overhead
-- 🤖 **Agent tooling & workflows**: Claude Code skills, MCP servers, browser automation, and scheduled agents that report and fix things on their own
+- 🔁 **Day-2 maintenance & agents**: Claude Code skills, MCP servers, browser automation, and scheduled agents that monitor, report, and fix things after launch
 - 🎬 **AI media & content pipelines**: automated short-video, asset, and publishing workflows built for volume
 - 🔧 **Open source**: fixing bugs and shipping improvements across agent sandboxes, dev tools, and local AI runtimes
 
@@ -33,11 +35,40 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 ### 🔧 Recent open-source work
 
 <!-- OSS-WORK:START -->
+Merged upstream PRs: **4** across **4** repositories ([live search](https://github.com/pulls?q=is%3Apr+author%3Abrixtonpham+is%3Amerged+-user%3Abrixtonpham)). Open pull requests are proposals, not merged features.
+
+- 🟣 merged — **[rlaope/oh-my-hermes#3210](https://github.com/rlaope/oh-my-hermes/pull/3210)** fix(fanout): bound verification and reproduction commands in UTF-8 bytes
 - 🟣 merged — **[erkamyaman/safe-anything#76](https://github.com/erkamyaman/safe-anything/pull/76)** fix(agent): check permissions.allow for agent.unrestricted-shell
 - 🟣 merged — **[opensandbox-group/OpenSandbox#3069](https://github.com/opensandbox-group/OpenSandbox/pull/3069)** fix(egress): base credential-bound mode checks on session configuration
 - 🟣 merged — **[erkamyaman/rust-anything#395](https://github.com/erkamyaman/rust-anything/pull/395)** fix(http): fail when fixed port is already in use or build exits before listening
+- 🟢 open — **[skyhook-io/radar#2846](https://github.com/skyhook-io/radar/pull/2846)** feat(relations): add CSI VolumeSnapshot resource relationships
+
+<details>
+<summary>Full history (4 merged · 12 in review)</summary>
+
+**Merged (4)**
+
+- 🟣 merged — **[rlaope/oh-my-hermes#3210](https://github.com/rlaope/oh-my-hermes/pull/3210)** fix(fanout): bound verification and reproduction commands in UTF-8 bytes
+- 🟣 merged — **[erkamyaman/safe-anything#76](https://github.com/erkamyaman/safe-anything/pull/76)** fix(agent): check permissions.allow for agent.unrestricted-shell
+- 🟣 merged — **[opensandbox-group/OpenSandbox#3069](https://github.com/opensandbox-group/OpenSandbox/pull/3069)** fix(egress): base credential-bound mode checks on session configuration
+- 🟣 merged — **[erkamyaman/rust-anything#395](https://github.com/erkamyaman/rust-anything/pull/395)** fix(http): fail when fixed port is already in use or build exits before listening
+
+**In review (12)**
+
+- 🟢 open — **[skyhook-io/radar#2846](https://github.com/skyhook-io/radar/pull/2846)** feat(relations): add CSI VolumeSnapshot resource relationships
+- 🟢 open — **[eugenioenko/ttt#1724](https://github.com/eugenioenko/ttt/pull/1724)** fix(git): diff merge commits against first parent in commit details
+- 🟢 open — **[storytold/craft-common-actions#365](https://github.com/storytold/craft-common-actions/pull/365)** agent-roots-conformance: add shared Rule 18 startup confinement check
+- 🟢 open — **[storytold/craft-contrib#90](https://github.com/storytold/craft-contrib/pull/90)** RFC-0090: Rule 18 covers connected agent entry points and adds a shared conformance check
 - 🟢 open — **[storytold/craft-launcher#1631](https://github.com/storytold/craft-launcher/pull/1631)** fix(macos): unregister staging path and register installed app with LaunchServices
 - 🟢 open — **[storytold/craft-libs#3457](https://github.com/storytold/craft-libs/pull/3457)** fix(color-ui): report one SwatchPalette pick per click on release
+- 🟢 open — **[storytold/figcraft#2625](https://github.com/storytold/figcraft/pull/2625)** fix(collab-net): stop wildcard hosts without a loopback self-connect
+- 🟢 open — **[tangency-labs/solidcraft#21525](https://github.com/tangency-labs/solidcraft/pull/21525)** Frames: move turn_to_parallel and tapered_flange_ends across solidcore layers (#21397)
+- 🟢 open — **[BaaRai/ARTEX#533](https://github.com/BaaRai/ARTEX/pull/533)** chore: migrate log.Printf to log/slog in agent and cmd
+- 🟢 open — **[nexu-io/openmotion#765](https://github.com/nexu-io/openmotion/pull/765)** fix(dsh): recover when --dump-config rejects Electron-managed desktop profile
+- 🟢 open — **[MODSetter/SurfSense#2466](https://github.com/MODSetter/SurfSense/pull/2466)** fix(local): remove unread template.system_role and llama.cpp run.args from manifest
+- 🟢 open — **[ag-ui-protocol/ag-ui#3431](https://github.com/ag-ui-protocol/ag-ui/pull/3431)** fix(langgraph): stream content carried on finish_reason chunks
+
+</details>
 
 <sub>Updated automatically daily from public GitHub activity.</sub>
 <!-- OSS-WORK:END -->

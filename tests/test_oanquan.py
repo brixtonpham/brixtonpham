@@ -296,8 +296,28 @@ class TestOssActivityUpdater(unittest.TestCase):
         self.assertFalse(prs[1]["merged"])
 
         block = render_oss_block(prs)
+        self.assertIn("Merged upstream PRs: **1** across **1** repository", block)
         self.assertIn("🟣 merged", block)
         self.assertIn("🟢 open", block)
+        self.assertNotIn("<details>", block)
+
+        many = [
+            {
+                "repo": f"org/repo-{i}",
+                "number": i,
+                "title": f"fix: item {i}",
+                "url": f"https://github.com/org/repo-{i}/pull/{i}",
+                "merged": i < 3,
+                "updated_at": f"2026-11-{10 + i:02d}T00:00:00Z",
+            }
+            for i in range(7)
+        ]
+        big_block = render_oss_block(many, "brixtonpham")
+        self.assertIn("Merged upstream PRs: **3** across **3** repositories", big_block)
+        self.assertIn("<details>", big_block)
+        self.assertIn("Full history (3 merged · 4 in review)", big_block)
+        self.assertIn("**Merged (3)**", big_block)
+        self.assertIn("**In review (4)**", big_block)
 
         with tempfile.TemporaryDirectory() as tmp:
             readme = Path(tmp) / "README.md"
