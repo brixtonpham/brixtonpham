@@ -1,19 +1,19 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=600&lines=I+describe+it.+AI+builds+it.+I+ship+it.;Vibe+coding+%C2%B7+Vibe+design+%C2%B7+Vibe+marketing;Systems+that+run+on+their+own" alt="I describe it. AI builds it. I ship it." />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=640&lines=Indie+builder+%C2%B7+AI-native+engineer;Products%2C+agent+tooling%2C+and+open+source;Systems+that+run+on+their+own" alt="Indie builder · AI-native engineer" />
 
-**Brixton Pham** · vibe builder from Vietnam
+**Brixton Pham** · Vietnam
 
-I describe it, AI builds it, I ship it, and then a system keeps it running.
+I build small software products end to end, contribute to open-source agent tools, and automate the boring parts.
 
 </div>
 
 ## 🔭 What I do
 
-- 🧑‍💻 **Vibe coding**: whole products, from the first prompt to production, payments included
-- 🎨 **Vibe design**: landing pages, UI and brand assets made with AI
-- 📣 **Vibe marketing**: content, short video and social posts at volume
-- ⚙️ **Automatic systems**: scheduled agents that post, report and fix things on their own
+- 🛠️ **End-to-end products**: taking ideas from first prototype to live production — small stacks, real users, low ops overhead
+- 🤖 **Agent tooling & workflows**: Claude Code skills, MCP servers, browser automation, and scheduled agents that report and fix things on their own
+- 🎬 **AI media & content pipelines**: automated short-video, asset, and publishing workflows built for volume
+- 🔧 **Open source**: fixing bugs and shipping improvements across agent sandboxes, dev tools, and local AI runtimes
 
 ## 🧩 Open source
 
@@ -28,14 +28,16 @@ muse2api login --account main --browser
 muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 ```
 
+**[timkeypro-skills](https://github.com/brixtonpham/timkeypro-skills)**: free local-first video skills for Claude Code — clone any video's edit style into a CapCut draft, generate Vietnamese sales scripts, repurpose one video across platforms, score 5-second hooks, and run pre-upload authenticity checks.
+
 ### 🔧 Recent open-source work
 
 <!-- OSS-WORK:START -->
+- 🟣 merged — **[erkamyaman/safe-anything#76](https://github.com/erkamyaman/safe-anything/pull/76)** fix(agent): check permissions.allow for agent.unrestricted-shell
 - 🟣 merged — **[opensandbox-group/OpenSandbox#3069](https://github.com/opensandbox-group/OpenSandbox/pull/3069)** fix(egress): base credential-bound mode checks on session configuration
 - 🟣 merged — **[erkamyaman/rust-anything#395](https://github.com/erkamyaman/rust-anything/pull/395)** fix(http): fail when fixed port is already in use or build exits before listening
-- 🟢 open — **[tangency-labs/solidcraft#21525](https://github.com/tangency-labs/solidcraft/pull/21525)** Frames: move turn_to_parallel and tapered_flange_ends across solidcore layers (#21397)
-- 🟢 open — **[nexu-io/openmotion#765](https://github.com/nexu-io/openmotion/pull/765)** fix(dsh): recover when --dump-config rejects Electron-managed desktop profile
-- 🟢 open — **[MODSetter/SurfSense#2466](https://github.com/MODSetter/SurfSense/pull/2466)** fix(local): remove unread template.system_role and llama.cpp run.args from manifest
+- 🟢 open — **[storytold/craft-launcher#1631](https://github.com/storytold/craft-launcher/pull/1631)** fix(macos): unregister staging path and register installed app with LaunchServices
+- 🟢 open — **[storytold/craft-libs#3457](https://github.com/storytold/craft-libs/pull/3457)** fix(color-ui): report one SwatchPalette pick per click on release
 
 <sub>Updated automatically daily from public GitHub activity.</sub>
 <!-- OSS-WORK:END -->
@@ -92,15 +94,10 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 ## 🐍 Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg" />
-  <img alt="3D contribution graph" src="./profile-3d-contrib/profile-green-animate.svg" />
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/brixtonpham/brixtonpham/output/snake-dark.svg" />
   <img alt="Contribution snake" src="https://raw.githubusercontent.com/brixtonpham/brixtonpham/output/snake.svg" />
 </picture>
 
-<sub>Both graphs redraw themselves every night, from a scheduled workflow in this repo.</sub>
+<sub>Redrawn automatically every night from a scheduled workflow in this repo.</sub>
 
-<p align="center"><b>Ship first, polish later.</b></p>
+<p align="center"><sub>Say hi by opening an issue on any repo — or make the next move in Ô ăn quan above.</sub></p>

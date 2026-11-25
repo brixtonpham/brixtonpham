@@ -1,7 +1,7 @@
 name: Profile art
 
-# Redraws the contribution snake, 3D contribution graph, and recent OSS activity once a day.
-# Contribution graphs read the public contribution calendar (which includes private-repo
+# Redraws the contribution snake and recent OSS activity once a day.
+# The snake reads the public contribution calendar (which includes private-repo
 # counts via profile settings, never private repo names). Recent OSS work reads public PRs only.
 
 on:
@@ -22,25 +22,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  graph-3d:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v5
-      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-      - name: Commit the 3D graph
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add profile-3d-contrib
-          if git commit -m "Update 3D contribution graph"; then
-            git pull --rebase
-            git push
-          fi
-
   oss-work:
     runs-on: ubuntu-latest
     timeout-minutes: 5
