@@ -8,7 +8,6 @@
 
 <p align="left">
   <samp>
-    Building small software products end to end, agent tools, and systems that run themselves.<br>
     <!-- OSS-WORK:START -->
     Merged upstream in <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a>, <a href="https://github.com/erkamyaman/safe-anything/pulls?q=is:pr%20author:brixtonpham">safe-anything</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a> and <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>
     <!-- OSS-WORK:END --><br>
@@ -19,14 +18,12 @@
 <p align="left">
   <samp>
     <a href="https://github.com/pulls?q=is%3Apr+author%3Abrixtonpham+is%3Amerged+-user%3Abrixtonpham">merged prs</a> ·
-    <a href="https://github.com/pulls?q=is%3Apr+is%3Aopen+author%3Abrixtonpham+-user%3Abrixtonpham">open prs</a> ·
-    <a href="https://github.com/brixtonpham?tab=repositories">repos</a> ·
-    <a href="https://github.com/Triad-Makers">triad makers</a>
+    <a href="https://github.com/brixtonpham?tab=repositories">repos</a>
   </samp>
 </p>
 
 <details>
-<summary><samp>play ô ăn quan</samp></summary>
+<summary><samp>ô ăn quan</samp></summary>
 
 <!-- OANQUAN:START -->
 <div align="center">
