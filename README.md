@@ -1,19 +1,19 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=640&lines=Indie+builder+%C2%B7+AI-native+engineer;Products%2C+agent+tooling%2C+and+open+source;Day-2+systems+that+run+themselves" alt="Indie builder · AI-native engineer" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=2F81F7&center=true&vCenter=true&width=640&lines=Indie+builder+%C2%B7+AI-native+engineer;Products%2C+agent+tooling%2C+and+open+source;Systems+that+maintain+themselves" alt="Indie builder · AI-native engineer" />
 
 **Brixton Pham** · Vietnam
 
 *Vibe coding gets you to launch. Automated maintenance keeps it alive.*
 
-I build small software products end to end, wire up day-2 agents to monitor and patch them, and contribute fixes upstream to open-source agent tools.
+I build small software products end to end, wire up agents to monitor and patch them after launch, and contribute fixes upstream to open-source agent tools.
 
 </div>
 
 ## 🔭 What I do
 
 - 🛠️ **End-to-end products**: taking ideas from first prototype to live production — small stacks, real users, low ops overhead
-- 🔁 **Day-2 maintenance & agents**: Claude Code skills, MCP servers, browser automation, and scheduled agents that monitor, report, and fix things after launch
+- 🔁 **Autonomous maintenance & agents**: Claude Code skills, MCP servers, browser automation, and scheduled agents that monitor, report, and fix things after launch
 - 🎬 **AI media & content pipelines**: automated short-video, asset, and publishing workflows built for volume
 - 🔧 **Open source**: fixing bugs and shipping improvements across agent sandboxes, dev tools, and local AI runtimes
 
