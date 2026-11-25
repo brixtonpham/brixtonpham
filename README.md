@@ -9,7 +9,6 @@
 <p align="left">
   <samp>
     Building small software products end to end, agent tools, and systems that run themselves.<br>
-    Creator of <a href="https://github.com/brixtonpham/muse2api-cli">muse2api-cli</a> and <a href="https://github.com/brixtonpham/timkeypro-skills">timkeypro-skills</a><br>
     <!-- OSS-WORK:START -->
     Merged upstream in <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a>, <a href="https://github.com/erkamyaman/safe-anything/pulls?q=is:pr%20author:brixtonpham">safe-anything</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a> and <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>
     <!-- OSS-WORK:END --><br>
