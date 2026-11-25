@@ -31,9 +31,11 @@ muse2api gen --prompt "a 10 s video of a cat surfing" --ref cat.jpg --out out/
 ### 🔧 Recent open-source work
 
 <!-- OSS-WORK:START -->
-- 🟢 open — **[skyhook-io/radar#2846](https://github.com/skyhook-io/radar/pull/2846)** feat(relations): add CSI VolumeSnapshot resource relationships
-- 🟢 open — **[ag-ui-protocol/ag-ui#3431](https://github.com/ag-ui-protocol/ag-ui/pull/3431)** fix(langgraph): stream content carried on finish_reason chunks
+- 🟣 merged — **[opensandbox-group/OpenSandbox#3069](https://github.com/opensandbox-group/OpenSandbox/pull/3069)** fix(egress): base credential-bound mode checks on session configuration
+- 🟣 merged — **[erkamyaman/rust-anything#395](https://github.com/erkamyaman/rust-anything/pull/395)** fix(http): fail when fixed port is already in use or build exits before listening
+- 🟢 open — **[tangency-labs/solidcraft#21525](https://github.com/tangency-labs/solidcraft/pull/21525)** Frames: move turn_to_parallel and tapered_flange_ends across solidcore layers (#21397)
 - 🟢 open — **[nexu-io/openmotion#765](https://github.com/nexu-io/openmotion/pull/765)** fix(dsh): recover when --dump-config rejects Electron-managed desktop profile
+- 🟢 open — **[MODSetter/SurfSense#2466](https://github.com/MODSetter/SurfSense/pull/2466)** fix(local): remove unread template.system_role and llama.cpp run.args from manifest
 
 <sub>Updated automatically daily from public GitHub activity.</sub>
 <!-- OSS-WORK:END -->
