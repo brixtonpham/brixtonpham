@@ -19,7 +19,7 @@ START_MARKER = "<!-- OSS-WORK:START -->"
 END_MARKER = "<!-- OSS-WORK:END -->"
 DEFAULT_USER = "brixtonpham"
 MIN_CREATED_DATE = "2026-01-01"
-MAX_HIGHLIGHTS = 5
+MAX_NAMED_REPOS = 6
 
 
 def _fetch_json(url: str, token: str | None) -> dict[str, Any]:
@@ -81,63 +81,43 @@ def filter_and_sort_prs(items: list[dict[str, Any]], username: str) -> list[dict
     return merged + opened
 
 
-def _format_pr_line(pr: dict[str, Any]) -> str:
-    badge = "🟣 merged" if pr["merged"] else "🟢 open"
-    return f"- {badge} — **[{pr['repo']}#{pr['number']}]({pr['url']})** {pr['title']}"
+def _repo_link(repo: str, username: str) -> str:
+    short = repo.split("/", 1)[-1]
+    q = urllib.parse.quote(f"is:pr author:{username}", safe=":")
+    return f'<a href="https://github.com/{repo}/pulls?q={q}">{short}</a>'
+
+
+def _join_links(links: list[str]) -> str:
+    if len(links) == 1:
+        return links[0]
+    return f"{', '.join(links[:-1])} and {links[-1]}"
 
 
 def render_oss_block(prs: list[dict[str, Any]], username: str = DEFAULT_USER) -> str:
-    if not prs:
-        return "_No recent public upstream PRs yet._"
-
     merged = [pr for pr in prs if pr["merged"]]
     opened = [pr for pr in prs if not pr["merged"]]
-    merged_repos = len({pr["repo"] for pr in merged})
-    live_search = (
-        f"https://github.com/pulls?q=is%3Apr+author%3A{urllib.parse.quote(username)}"
-        f"+is%3Amerged+-user%3A{urllib.parse.quote(username)}"
-    )
 
-    lines: list[str] = []
-    if merged:
-        repo_word = "repository" if merged_repos == 1 else "repositories"
-        lines.append(
-            f"Merged upstream PRs: **{len(merged)}** across **{merged_repos}** {repo_word} "
-            f"([live search]({live_search})). Open pull requests are proposals, not merged features."
+    target = merged if merged else opened
+    if not target:
+        return "Contributing to open-source agent tools"
+
+    prefix = "Merged upstream in" if merged else "Contributing to"
+    seen: list[str] = []
+    for pr in target:
+        if pr["repo"] not in seen:
+            seen.append(pr["repo"])
+
+    named = [_repo_link(r, username) for r in seen[:MAX_NAMED_REPOS]]
+    extra = len(seen) - len(named)
+    if extra > 0:
+        state_q = "+is%3Amerged" if merged else "+is%3Aopen"
+        more_url = (
+            f"https://github.com/pulls?q=is%3Apr+author%3A{urllib.parse.quote(username)}"
+            f"{state_q}+-user%3A{urllib.parse.quote(username)}"
         )
-    else:
-        lines.append("Open pull requests are proposals, not merged features.")
-    lines.append("")
+        named.append(f'<a href="{more_url}">{extra} more</a>')
 
-    for pr in prs[:MAX_HIGHLIGHTS]:
-        lines.append(_format_pr_line(pr))
-
-    if len(prs) > MAX_HIGHLIGHTS:
-        lines.extend(
-            [
-                "",
-                "<details>",
-                f"<summary>Full history ({len(merged)} merged · {len(opened)} in review)</summary>",
-                "",
-            ]
-        )
-        if merged:
-            lines.append(f"**Merged ({len(merged)})**")
-            lines.append("")
-            for pr in merged:
-                lines.append(_format_pr_line(pr))
-            lines.append("")
-        if opened:
-            lines.append(f"**In review ({len(opened)})**")
-            lines.append("")
-            for pr in opened:
-                lines.append(_format_pr_line(pr))
-            lines.append("")
-        lines.append("</details>")
-
-    lines.append("")
-    lines.append("<sub>Updated automatically daily from public GitHub activity.</sub>")
-    return "\n".join(lines)
+    return f"{prefix} {_join_links(named)}"
 
 
 def update_readme(readme_path: Path, block: str) -> bool:
@@ -146,7 +126,7 @@ def update_readme(readme_path: Path, block: str) -> bool:
         raise ValueError(f"Missing {START_MARKER} / {END_MARKER} markers in {readme_path}")
     before, rest = current.split(START_MARKER, 1)
     _, after = rest.split(END_MARKER, 1)
-    updated = f"{before}{START_MARKER}\n{block}\n{END_MARKER}{after}"
+    updated = f"{before}{START_MARKER}\n    {block}\n    {END_MARKER}{after}"
     if updated == current:
         return False
     readme_path.write_text(updated, encoding="utf-8")
