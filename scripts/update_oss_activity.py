@@ -1,7 +1,8 @@
-"""Update <!-- OSS-WORK:START/END --> in README.md from public GitHub activity.
+"""Update the inline OSS contribution line in README.md from public GitHub PRs.
 
-Pure Python stdlib (no pip dependencies). Uses GITHUB_TOKEN when available and
-falls back to unauthenticated public REST read if Search returns 401/403.
+Uses only the Python standard library and public GitHub REST APIs so it works
+with the default Actions GITHUB_TOKEN (no PAT needed). Ranks named repos by
+GitHub star count (descending), breaking ties by most recent merge date.
 """
 
 from __future__ import annotations
@@ -49,6 +50,17 @@ def fetch_upstream_prs(username: str, token: str | None) -> list[dict[str, Any]]
     return list(data.get("items", []))
 
 
+def fetch_repo_stars(repos: list[str], token: str | None) -> dict[str, int]:
+    stars: dict[str, int] = {}
+    for repo in repos:
+        try:
+            data = _fetch_json(f"https://api.github.com/repos/{repo}", token)
+            stars[repo] = int(data.get("stargazers_count", 0))
+        except Exception:
+            stars[repo] = 0
+    return stars
+
+
 def filter_and_sort_prs(items: list[dict[str, Any]], username: str) -> list[dict[str, Any]]:
     """Keep only merged or open upstream PRs (excluding own repos & closed-unmerged)."""
     kept = []
@@ -93,7 +105,11 @@ def _join_links(links: list[str]) -> str:
     return f"{', '.join(links[:-1])} and {links[-1]}"
 
 
-def render_oss_block(prs: list[dict[str, Any]], username: str = DEFAULT_USER) -> str:
+def render_oss_block(
+    prs: list[dict[str, Any]],
+    username: str = DEFAULT_USER,
+    repo_stars: dict[str, int] | None = None,
+) -> str:
     merged = [pr for pr in prs if pr["merged"]]
     opened = [pr for pr in prs if not pr["merged"]]
 
@@ -102,13 +118,21 @@ def render_oss_block(prs: list[dict[str, Any]], username: str = DEFAULT_USER) ->
         return "Contributing to open-source agent tools"
 
     prefix = "Merged upstream in" if merged else "Contributing to"
-    seen: list[str] = []
+    latest_by_repo: dict[str, str] = {}
     for pr in target:
-        if pr["repo"] not in seen:
-            seen.append(pr["repo"])
+        repo = pr["repo"]
+        if repo not in latest_by_repo or pr["updated_at"] > latest_by_repo[repo]:
+            latest_by_repo[repo] = pr["updated_at"]
 
-    named = [_repo_link(r, username) for r in seen[:MAX_NAMED_REPOS]]
-    extra = len(seen) - len(named)
+    stars_map = repo_stars or {}
+    ranked = sorted(
+        latest_by_repo.keys(),
+        key=lambda r: (stars_map.get(r, 0), latest_by_repo[r]),
+        reverse=True,
+    )
+
+    named = [_repo_link(r, username) for r in ranked[:MAX_NAMED_REPOS]]
+    extra = len(ranked) - len(named)
     if extra > 0:
         state_q = "+is%3Amerged" if merged else "+is%3Aopen"
         more_url = (
@@ -142,8 +166,12 @@ def main() -> None:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     raw_items = fetch_upstream_prs(args.user, token)
     prs = filter_and_sort_prs(raw_items, args.user)
-    changed = update_readme(args.readme, render_oss_block(prs, args.user))
-    print(f"oss-work updated={changed} count={len(prs)}")
+    merged = [pr for pr in prs if pr["merged"]]
+    target = merged if merged else prs
+    distinct_repos = list(dict.fromkeys(pr["repo"] for pr in target))
+    stars = fetch_repo_stars(distinct_repos, token)
+    changed = update_readme(args.readme, render_oss_block(prs, args.user, repo_stars=stars))
+    print(f"oss-work updated={changed} count={len(prs)} repos={len(distinct_repos)}")
 
 
 if __name__ == "__main__":

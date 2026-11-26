@@ -311,9 +311,14 @@ class TestOssActivityUpdater(unittest.TestCase):
             }
             for i in range(8)
         ]
-        big_block = render_oss_block(many, "brixtonpham")
+        big_block = render_oss_block(
+            many,
+            "brixtonpham",
+            repo_stars={"org/repo-0": 20000, "org/repo-1": 5000},
+        )
         self.assertIn("Merged upstream in", big_block)
         self.assertIn(">2 more</a>", big_block)
+        self.assertLess(big_block.index(">repo-0</a>"), big_block.index(">repo-1</a>"))
 
         open_only = [
             {

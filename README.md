@@ -9,7 +9,7 @@
 <p align="left">
   <samp>
     <!-- OSS-WORK:START -->
-    Merged upstream in <a href="https://github.com/tangency-labs/solidcraft/pulls?q=is:pr%20author:brixtonpham">solidcraft</a>, <a href="https://github.com/eugenioenko/ttt/pulls?q=is:pr%20author:brixtonpham">ttt</a>, <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a>, <a href="https://github.com/erkamyaman/safe-anything/pulls?q=is:pr%20author:brixtonpham">safe-anything</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a> and <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>
+    Merged upstream in <a href="https://github.com/tangency-labs/solidcraft/pulls?q=is:pr%20author:brixtonpham">solidcraft</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a>, <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>, <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a>, <a href="https://github.com/eugenioenko/ttt/pulls?q=is:pr%20author:brixtonpham">ttt</a> and <a href="https://github.com/erkamyaman/safe-anything/pulls?q=is:pr%20author:brixtonpham">safe-anything</a>
     <!-- OSS-WORK:END --><br>
     Python · TypeScript · Next.js · Cloudflare · Claude Code · MCP
   </samp>
