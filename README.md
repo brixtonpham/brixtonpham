@@ -9,7 +9,7 @@
 <p align="left">
   <samp>
     <!-- OSS-WORK:START -->
-    Merged upstream in <a href="https://github.com/tangency-labs/solidcraft/pulls?q=is:pr%20author:brixtonpham">solidcraft</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a>, <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>, <a href="https://github.com/ersinkoc/phonebox/pulls?q=is:pr%20author:brixtonpham">phonebox</a>, <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a>, <a href="https://github.com/pierridotite/mobile-agent-testers/pulls?q=is:pr%20author:brixtonpham">mobile-agent-testers</a> and <a href="https://github.com/pulls?q=is%3Apr+author%3Abrixtonpham+is%3Amerged+-user%3Abrixtonpham">4 more</a>
+    Merged upstream in <a href="https://github.com/BaaRai/ARTEX/pulls?q=is:pr%20author:brixtonpham">ARTEX</a>, <a href="https://github.com/tangency-labs/solidcraft/pulls?q=is:pr%20author:brixtonpham">solidcraft</a>, <a href="https://github.com/opensandbox-group/OpenSandbox/pulls?q=is:pr%20author:brixtonpham">OpenSandbox</a>, <a href="https://github.com/erkamyaman/rust-anything/pulls?q=is:pr%20author:brixtonpham">rust-anything</a>, <a href="https://github.com/ersinkoc/phonebox/pulls?q=is:pr%20author:brixtonpham">phonebox</a>, <a href="https://github.com/rlaope/oh-my-hermes/pulls?q=is:pr%20author:brixtonpham">oh-my-hermes</a> and <a href="https://github.com/pulls?q=is%3Apr+author%3Abrixtonpham+is%3Amerged+-user%3Abrixtonpham">5 more</a>
     <!-- OSS-WORK:END --><br>
     Python · TypeScript · Next.js · Cloudflare · Claude Code · MCP
   </samp>
